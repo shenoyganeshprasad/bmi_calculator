@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'reuseableCard.dart';
-import 'iconContent.dart';
-import 'constants.dart';
+import 'package:bmi_calculator_flutter/widgets/reuseableCard.dart';
+import 'package:bmi_calculator_flutter/widgets/iconContent.dart';
+import 'package:bmi_calculator_flutter/widgets/bottomButton.dart';
+import '../constants.dart';
 import 'resultsPage.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -193,26 +194,14 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          GestureDetector(
+          BottomButtom(
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => ResultsPage()),
               );
             },
-            child: Container(
-              child: Center(
-                child: Text(
-                  'Calculate',
-                  style: largeButtonTextStyle,
-                ),
-              ),
-              color: bottomContainerColor,
-              padding: EdgeInsets.only(bottom: 20.0),
-              margin: EdgeInsets.only(top: 10.0),
-              width: double.infinity,
-              height: bottomContainerHeight,
-            ),
+            buttonTitle: 'CALCULATE',
           ),
         ],
       ),
